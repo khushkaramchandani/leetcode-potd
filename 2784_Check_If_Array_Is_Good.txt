@@ -1,0 +1,27 @@
+//This was leetcode's POTD on 14th May 2026
+//Solution is in C++
+
+class Solution {
+public:
+    bool isGood(vector<int>& nums) {
+        int n = nums.size() - 1;
+      
+        int frequency[201] = {};
+      
+        for (int number : nums) {
+            ++frequency[number];
+        }
+      
+        if (frequency[n] != 2) {
+            return false;
+        }
+      
+        for (int i = 1; i < n; ++i) {
+            if (frequency[i] != 1) {
+                return false;
+            }
+        }
+      
+        return true;
+    }
+};
